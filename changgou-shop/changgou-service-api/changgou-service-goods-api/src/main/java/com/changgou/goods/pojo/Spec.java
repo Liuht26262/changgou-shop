@@ -1,33 +1,51 @@
 package com.changgou.goods.pojo;
 
-import lombok.Data;
-
-import javax.persistence.*;
 import java.io.Serializable;
 
-/****
- * @author robod
- *****/
-@Data
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Builder;
+import lombok.Data;
+
+/**
+ * TODO
+ *
+ * @author liuht26262@yunrong.cn
+ * @version V3.0
+ * @description
+ * @since 2022/5/20 17:07
+ */
 @Table(name="tb_spec")
+@Data
+@Builder
 public class Spec implements Serializable{
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    /** ID */
     @Column(name = "id")
-    private Integer id;//ID
+	private Integer id;
 
+    /** 名称 */
     @Column(name = "name")
-    private String name;//名称
+	private String name;
 
+    /** 规格选项 */
     @Column(name = "options")
-    private String options;//规格选项
+	private String options;
 
+    /** 排序 */
     @Column(name = "seq")
-    private Integer seq;//排序
+	private Integer seq;
 
+    /** 模板ID */
     @Column(name = "template_id")
-    private Integer templateId;//模板ID
+	private Integer templateId;
+
 
 
 

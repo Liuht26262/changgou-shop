@@ -1,4 +1,4 @@
-package entity;
+package com.changgou.common.entitpy;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.changgou.Enum;
+package com.changgou.common.Enum;
 
 
 import lombok.AllArgsConstructor;

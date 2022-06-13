@@ -1,4 +1,4 @@
-package com.changgou.common.dto;
+package com.changgou.common.entitpy;
 
 import java.io.Serializable;
 
@@ -30,12 +30,19 @@ public class RespResult<T> implements Serializable {
         this.code = code;
     }
 
+    public RespResult(boolean status,Integer code,String message){
+        this.status = status;
+        this.code = code;
+        this.message = message;
+    }
+
     public RespResult(boolean status, Integer code, String message, T data) {
         this.status = status;
         this.code = code;
         this.message = message;
         this.data = data;
     }
+
 
     public RespResult<T> success(T data){
         this.code = 20000;

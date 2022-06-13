@@ -1,32 +1,52 @@
 package com.changgou.goods.pojo;
 
-import lombok.Data;
-
-import javax.persistence.*;
 import java.io.Serializable;
 
-/****
- * @author Robod
- *****/
-@Data
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Builder;
+import lombok.Data;
+
+/**
+ * TODO
+ *
+ * @author liuht26262@yunrong.cn
+ * @version V3.0
+ * @description
+ * @since 2022/5/20 17:07
+ */
 @Table(name="tb_brand")
+@Data
+@Builder
 public class Brand implements Serializable{
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Integer id;//品牌id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    /** 品牌id */
+    @Column(name = "id")
+	private Integer id;
 
-	@Column(name = "name")
-	private String name;//品牌名称
+    /** 品牌名称 */
+    @Column(name = "name")
+	private String name;
 
-	@Column(name = "image")
-	private String image;//品牌图片地址
+    /** 品牌图片地址 */
+    @Column(name = "image")
+	private String image;
 
-	@Column(name = "letter")
-	private String letter;//品牌的首字母
+    /** 品牌的首字母 */
+    @Column(name = "letter")
+	private String letter;
 
-	@Column(name = "seq")
-	private Integer seq;//排序
+    /** 排序 */
+    @Column(name = "seq")
+	private Integer seq;
+
+
+
 
 }

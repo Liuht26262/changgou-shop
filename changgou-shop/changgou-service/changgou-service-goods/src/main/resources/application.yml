@@ -2,21 +2,23 @@ server:
   port: 18081
 spring:
   application:
-    name: goods
+    name: service-goods
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.211.132:3306/changgou_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/changgou_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: 123456
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
-  instance:
-    prefer-ip-address: true
-feign:
-  hystrix:
-    enabled: true
+  autoconfigure:
+      exclude: org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration   #忽略Eureka，避免出现服务中心冲突的问题
+#  instance:
+#    prefer-ip-address: true
+#feign:
+#  hystrix:
+#    enabled: true
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
